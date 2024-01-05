@@ -19,6 +19,7 @@ import RarePicker from "./RarePicker.vue";
 import {Fish} from "../models/Fish";
 import {computed, Ref, ref} from "vue";
 import DailyGuide from "./DailyGuide.vue";
+
 const dailyFish: Ref<Fish | null> = ref(null);
 
 const currentTime = ref(new Date());

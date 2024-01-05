@@ -26,8 +26,8 @@ function getCurrentClockPhaseUTC(isCantha: boolean, utcArray: [number, number, n
     const currentSeconds = getSeconds(utcArray);
 
     for (const clockPhase of clockPhaseOrder) {
-        const timeStampStartSeconds = getSeconds(regionalTimeStamps.get(clockPhase).start);
-        const timeStampEndSeconds = getSeconds(regionalTimeStamps.get(clockPhase).end);
+        const timeStampStartSeconds = getSeconds(regionalTimeStamps.get(clockPhase)!.start);
+        const timeStampEndSeconds = getSeconds(regionalTimeStamps.get(clockPhase)!.end);
         if (currentSeconds <= timeStampEndSeconds && currentSeconds >= timeStampStartSeconds) {
             return clockPhase;
         }
@@ -54,7 +54,7 @@ function getRemainingSecondsUntil(clockPhase: ClockPhase, isCantha: boolean, utc
     const regionalTimeStamps = isCantha ? clockPhaseTimeStampsCantha : clockPhaseTimeStampsTyria;
     const phaseTimeStamps = regionalTimeStamps.get(clockPhase);
     const currentSeconds = getSeconds(utcArray);
-    const timeStampStartSeconds = getSeconds(phaseTimeStamps.start);
+    const timeStampStartSeconds = getSeconds(phaseTimeStamps!.start);
     const diff = timeStampStartSeconds - currentSeconds;
     return diff > 0 ? diff : 7200 + diff;
 }

@@ -45,7 +45,7 @@ const props = defineProps<{
   currentTime: Date,
 }>()
 
-const mapFish = allFish.filter(f => f.region === props.dailyFish.region);
+const mapFish = allFish.filter(f => f.region === props.dailyFish.region) as Fish[];
 
 const pickedHole = ref(props.dailyFish.hole);
 const pickedBait = ref(props.dailyFish.bait);
@@ -79,6 +79,10 @@ function pickFish(fish: Fish) {
   flex-wrap: wrap;
   align-items: flex-start;
   gap: 5px;
+}
+
+.mapFishItem {
+  flex-basis: 14%;
 }
 
 .label {

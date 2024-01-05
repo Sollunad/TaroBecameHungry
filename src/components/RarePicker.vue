@@ -14,8 +14,9 @@
 import allFish from '../data/fish.json';
 import FishCard from "./FishCard.vue";
 import {Rarity} from "../models/Rarity";
+import {Fish} from "../models/Fish";
 
-const rareFish = allFish.filter(f => f.rarity === Rarity.RARE).sort((f1, f2) => f1.name < f2.name ? -1 : f2.name < f1.name ? 1 : 0);
+const rareFish = allFish.filter(f => f.rarity === Rarity.RARE).sort((f1, f2) => f1.name < f2.name ? -1 : f2.name < f1.name ? 1 : 0) as Fish[];
 </script>
 
 <style scoped>
