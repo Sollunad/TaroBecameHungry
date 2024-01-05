@@ -38,7 +38,7 @@ const rarityColors = new Map<Rarity, string>([
     [Rarity.LEGENDARY, "#4C139D"],
 ])
 
-const iconUrl = `https://render.guildwars2.com/file/${props.fish.icon}`;
+const iconUrl = `https://render.guildwars2.com/file/${props.fish.icon}.png`;
 
 function isDailyFish() {
   return props.fish.name === props.dailyFish?.name;
