@@ -15,7 +15,7 @@
         :isCantha="isCantha"
     />
 
-    <div class="mapFishContainer" :style="{ 'max-height': mapFish.length === 21 ? '600px' : '400px' }">
+    <div class="mapFishContainer">
       <FishCard
           @click="pickFish(mFish)"
           class="mapFishItem"
@@ -77,10 +77,8 @@ function pickFish(fish: Fish) {
   margin-top: 16px;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
-  max-height: 500px;
   align-items: flex-start;
-  gap: 5px 0;
+  gap: 5px;
 }
 
 .label {
