@@ -1,6 +1,12 @@
 <template>
   <div class="container">
-    <FishCard v-for="singleFish in rareFish" :fish="singleFish" :expanded="false" @click="$emit('picked', singleFish)" />
+    <FishCard
+        class="fish"
+        v-for="singleFish in rareFish"
+        :fish="singleFish"
+        :expanded="false"
+        @click="$emit('picked', singleFish)"
+    />
   </div>
 </template>
 
@@ -18,5 +24,9 @@ const rareFish = allFish.filter(f => f.rarity === Rarity.RARE).sort((f1, f2) => 
   flex-wrap: wrap;
   gap: 10px;
   max-width: 1200px;
+}
+
+.fish {
+  cursor: pointer;
 }
 </style>
